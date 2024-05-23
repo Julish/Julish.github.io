@@ -1,0 +1,117 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap')
+	
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+    vertical-align: center;
+}
+
+.instruction{
+    text-align: center;
+    font-size: small;
+    font-style: italic;
+    color: var(--tg-theme-hint-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+details summary{
+    cursor: pointer;
+    pointer-events: auto;
+    background-color: var(--tg-theme-secondary-bg-color);
+
+    list-style: none;
+}
+
+details summary::before{
+    content: '\2C3';
+    margin-right: 5px;
+}
+
+details[open] summary::before{
+    content: '\2C5';
+    margin-right: 5px;
+}
+
+details div{
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+details > summary{
+    padding: 10px;
+    font-size: 20px;
+}
+
+details p {
+    width: 350px;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: var(--tg-theme-text-color);
+}
+
+#saveButton{
+    margin: 0 auto;
+    display: block;
+    align-content: center;
+    border: 1;
+    border-radius: 5px;
+    margin-top: 20px;
+		
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: var(--tg-theme-button-text-color);
+    background: var(--tg-theme-button-color);
+}
+
+button:hover {
+    background: var(--tg-theme-secondary-bg-color);
+}
+
+
+input {
+    width: 90%;
+    outline: none;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.breakfast input {
+    border-color: #E4BA6A;
+}
+
+.lunch input {
+    border-color: #787D46;
+}
+
+.snack input {
+    border-color: #F1EBD8;
+}
+
+.dinner input {
+    border-color: #7D4E25;
+}
+input:focus {
+    border-color: #db5d5d;
+}
+
+    

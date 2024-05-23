@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal times</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <p class="instruction"> Для составления списка блюд на каждый день недели разверните вкладки с названиями приемов пищи.<br> Чтобы пропустить прием пищи или день недели, просто оставьте соответствующие поля пустыми</p>
+    <section class="">
+        <details class="breakfast"> 
+            <summary>Завтрак</summary>
+            <div>
+                <p>Понедельник</p><input type="text" class = 'br' id="br_1"> 
+                <p>Вторник</p><input type="text" class = 'br' id="br_2">
+                <p>Среда</p><input type="text" class = 'br' id="br_3">  
+                <p>Четверг</p><input type="text" class = 'br' id="br_4">  
+                <p>Пятница</p><input type="text" class = 'br' id="br_5">  
+                <p>Суббота</p><input type="text" class = 'br' id="br_6">  
+                <p>Воскресенье</p><input type="text" class = 'br' id="br_7">
+            </div>
+        </details>   
+    
+        <details class="lunch"> 
+            <summary>Обед</summary>
+            <div>
+                <p>Понедельник</p><input type="text"  class = 'ln' id="lunch_1">
+                <p>Вторник</p><input type="text"  class = 'ln' id="lunch_2">
+                <p>Среда</p><input type="text"  class = 'ln' id="lunch_3">  
+                <p>Четверг</p><input type="text"  class = 'ln' id="lunch_4">  
+                <p>Пятница</p><input type="text"  class = 'ln' id="lunch_5">  
+                <p>Суббота</p><input type="text"  class = 'ln' id="lunch_6">  
+                <p>Воскресенье</p><input type="text"  class = 'ln' id="lunch_7">  
+            </div>  
+        </details>
+    
+        <details class="snack"> 
+            <summary>Перекус</summary>
+            <div>
+                <p>Понедельник</p><input type="text" class = 'sn' id="snack_1"> 
+                <p>Вторник</p><input type="text" class = 'sn' id="snack_2">
+                <p>Среда</p><input type="text" class = 'sn' id="snack_3">  
+                <p>Четверг</p><input type="text" class = 'sn' id="snack_4">  
+                <p>Пятница</p><input type="text" class = 'sn' id="snack_5">  
+                <p>Суббота</p><input type="text" class = 'sn' id="snack_6">  
+                <p>Воскресенье</p><input type="text" class = 'sn' id="snack_7">
+            </div>   
+        </details>
+
+        <details class="dinner">
+            <summary>Ужин</summary>
+            <div>
+                <p>Понедельник</p><input type="text" class = 'dn' id="dinner_1">
+                <p>Вторник</p><input type="text" class = 'dn' id="dinner_2">
+                <p>Среда</p><input type="text" class = 'dn' id="dinner_3">  
+                <p>Четверг</p><input type="text" class = 'dn' id="dinner_4">  
+                <p>Пятница</p><input type="text" class = 'dn' id="dinner_5">  
+                <p>Суббота</p><input type="text" class = 'dn' id="dinner_6">  
+                <p>Воскресенье</p><input type="text" class = 'dn' id="dinner_7">
+            </div>
+        </details>
+    </section>  
+
+    <button id="saveButton">Сохранить</button>
+
+    <script src="app.js"></script>
+    
+</body>
+<footer>
+    
+</footer>
+</html>
