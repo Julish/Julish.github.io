@@ -12,34 +12,53 @@ body {
     padding: 20px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
-    vertical-align: center;
+    left: 2%;
+    right: 3%;
 }
 
 .instruction{
+
     text-align: center;
     font-size: small;
-    font-style: italic;
-    color: var(--tg-theme-hint-color);
+    color: var(--tg-theme-text-color);
     margin-top: 0;
     margin-bottom: 10px;
 }
+#addition.instruction {
+   
+    font-style: italic;
+    color: var(--tg-theme-hint-color);
+}
+
+details {
+    
+    transition: 0.2s background linear;
+}
+
+details:hover {
+    background: var(--tg-theme-section-bg-color);
+}
 
 details summary{
-    cursor: pointer;
+    /*cursor: pointer;*/
+    display: flex;
+    
     pointer-events: auto;
     background-color: var(--tg-theme-secondary-bg-color);
-
     list-style: none;
 }
 
 details summary::before{
-    content: '\2C3';
+    content: '\0025BA';
     margin-right: 5px;
+    transition: 0.2s;
 }
 
 details[open] summary::before{
-    content: '\2C5';
+    transform: rotate(90deg);
+    /*content: '\0025BC';*/
     margin-right: 5px;
+    transition: 0.2s;
 }
 
 details div{
@@ -50,6 +69,7 @@ details div{
 details > summary{
     padding: 10px;
     font-size: 20px;
+    transition: color 1s;
 }
 
 details p {
@@ -85,11 +105,12 @@ button:hover {
 
 input {
     width: 90%;
+    height: 30px;
     outline: none;
     margin-left: 10px;
     margin-top: 0px;
     margin-bottom: 10px;
-    padding: 15px 10px;
+    padding: 10px 10px;
     font-size: 14px;
     border: 2px solid;
     border-radius: 5px;
@@ -111,7 +132,7 @@ input {
     border-color: #7D4E25;
 }
 input:focus {
-    border-color: #db5d5d;
+    border-color: var(--tg-theme-accent-text-color);
 }
 
     
