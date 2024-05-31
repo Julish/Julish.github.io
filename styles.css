@@ -1,38 +1,58 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap')
 	
 * {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%; 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing: border-box;  
 }
 
-body {
+
+body { 
     display: flex;
     flex-direction: column;
     padding: 20px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
-    left: 2%;
-    right: 3%;
+    margin: 0;
+}
+
+body::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("back.webp");
+    background-repeat: repeat;
+    background-size: 50%;
+    opacity: 0.3;
+    z-index: -1;
+    
 }
 
 .instruction{
-
     text-align: center;
     font-size: small;
     color: var(--tg-theme-text-color);
     margin-top: 0;
     margin-bottom: 10px;
 }
+
 #addition.instruction {
-   
     font-style: italic;
     color: var(--tg-theme-hint-color);
 }
 
 details {
-    
+    width: -webkit-fill-available;
     transition: 0.2s background linear;
+    z-index:2;
+    position: relative;
 }
 
 details:hover {
@@ -41,7 +61,7 @@ details:hover {
 
 details summary{
     /*cursor: pointer;*/
-    display: flex;
+    display:  inline-block ;
     
     pointer-events: auto;
     background-color: var(--tg-theme-secondary-bg-color);
@@ -52,13 +72,14 @@ details summary::before{
     content: '\0025BA';
     margin-right: 5px;
     transition: 0.2s;
+    position: centre;
 }
 
 details[open] summary::before{
     transform: rotate(90deg);
-    /*content: '\0025BC';*/
     margin-right: 5px;
     transition: 0.2s;
+    position: centre
 }
 
 details div{
@@ -82,7 +103,7 @@ details p {
 
 #saveButton{
     margin: 0 auto;
-    display: block;
+    display:  inline-block;
     align-content: center;
     border: 1;
     border-radius: 5px;
@@ -104,7 +125,7 @@ button:hover {
 
 
 input {
-    width: 90%;
+    width: -webkit-fill-available;
     height: 30px;
     outline: none;
     margin-left: 10px;
