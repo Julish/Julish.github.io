@@ -8,7 +8,7 @@
     <link href="styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <div class="header">
         <p class="instruction"> Для составления списка блюд на каждый день недели разверните вкладки с названиями приемов пищи.</p> 
         <p class="instruction" id="addition">Чтобы пропустить прием пищи или день недели,</br> просто оставьте соответствующие поля пустыми</p>
     </div>
@@ -17,57 +17,250 @@
         <details class="breakfast"> 
             <summary>Завтрак</summary>
             <div class="content">
-                <p>Понедельник</p><input type="text" class = 'br' id="br_1"> 
-                <p>Вторник</p><input type="text" class = 'br' id="br_2">
-                <p>Среда</p><input type="text" class = 'br' id="br_3">  
-                <p>Четверг</p><input type="text" class = 'br' id="br_4">  
-                <p>Пятница</p><input type="text" class = 'br' id="br_5">  
-                <p>Суббота</p><input type="text" class = 'br' id="br_6">  
-                <p>Воскресенье</p><input type="text" class = 'br' id="br_7">
+                <p>Понедельник</p>
+                <label for="ch_br1"><input id="ch_br1" name="ch_br1" type="checkbox">
+                        Не заполнять последующие дни данным значением
+                </label>
+                <input type="text" class="br" id="br_1" data-value="empty"> 
+  
+
+                <p>Вторник</p>
+                <label for="ch_br2">
+                    <input id="ch_br2" name="ch_br2" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                </label>
+                <input type="text" class = 'br' id="br_2" data-value="empty">
+                
+
+                <p><p>Среда</p>
+                    <label for="ch_br3">
+                        <input id="ch_br3" name="ch_br3" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'br' id="br_3" data-value="empty"> 
+                
+
+                <p>Четверг</p>
+                    <label for="ch_br4">
+                        <input id="ch_br4" name="ch_br4" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>    
+                    <input type="text" class = 'br' id="br_4" data-value="empty">
+                
+
+                <p>Пятница</p>
+                    <label for="ch_br5">
+                        <input id="ch_br5" name="ch_br5" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>      
+                    <input type="text" class = 'br' id="br_5" data-value="empty">
+                
+
+                <p>Суббота</p>
+                    <label for="ch_br6">
+                        <input id="ch_br6" name="ch_br6" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>      
+                    <input type="text" class = 'br' id="br_6" data-value="empty">
+               
+
+                <p>Воскресенье</p>
+                    <label for="ch_br7">
+                        <input id="ch_br7" name="ch_br7" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>      
+                    <input type="text" class = 'br' id="br_7" data-value="empty">
+                
             </div>
         </details>   
     
-        <details class="lunch"> 
+         <details class="lunch"> 
             <summary>Обед</summary>
             <div class="content">
-                <p>Понедельник</p><input type="text"  class = 'ln' id="lunch_1">
-                <p>Вторник</p><input type="text"  class = 'ln' id="lunch_2">
-                <p>Среда</p><input type="text"  class = 'ln' id="lunch_3">  
-                <p>Четверг</p><input type="text"  class = 'ln' id="lunch_4">  
-                <p>Пятница</p><input type="text"  class = 'ln' id="lunch_5">  
-                <p>Суббота</p><input type="text"  class = 'ln' id="lunch_6">  
-                <p>Воскресенье</p><input type="text"  class = 'ln' id="lunch_7">  
+                <p>Понедельник</p>
+                    <label for="ch_ln1">
+                        <input id="ch_ln1" name="ch_ln1" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class = 'ln' id="lunch_1">
+                
+
+                <p>Вторник</p>
+                    <label for="ch_ln2">
+                        <input id="ch_ln2" name="ch_ln2" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class = 'ln' id="lunch_2">
+                
+                
+                <p>Среда</p>
+                    <label for="ch_ln3">
+                        <input id="ch_ln3" name="ch_ln3" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class = 'ln' id="lunch_3">
+                  
+                
+                <p>Четверг</p>
+                    <label for="ch_ln4">
+                        <input id="ch_ln4" name="ch_ln4" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class = 'ln' id="lunch_4">
+                  
+                
+                <p>Пятница</p>
+                    <label for="ch_ln5">
+                        <input id="ch_ln5" name="ch_ln5" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class = 'ln' id="lunch_5">
+                  
+                
+                <p>Суббота</p>
+                    <label for="ch_ln6">
+                        <input id="ch_ln6" name="ch_ln6" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class ='ln' id="lunch_6">
+                 
+                
+                <p>Воскресенье</p>
+                    <label for="ch_ln7">
+                        <input id="ch_ln7" name="ch_ln7" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text"  class ='ln' id="lunch_7">
+                  
             </div>  
         </details>
     
         <details class="snack"> 
             <summary>Перекус</summary>
             <div class="content">
-                <p>Понедельник</p><input type="text" class = 'sn' id="snack_1"> 
-                <p>Вторник</p><input type="text" class = 'sn' id="snack_2">
-                <p>Среда</p><input type="text" class = 'sn' id="snack_3">  
-                <p>Четверг</p><input type="text" class = 'sn' id="snack_4">  
-                <p>Пятница</p><input type="text" class = 'sn' id="snack_5">  
-                <p>Суббота</p><input type="text" class = 'sn' id="snack_6">  
-                <p>Воскресенье</p><input type="text" class = 'sn' id="snack_7">
+                <p><p>Понедельник</p>
+                    <label for="ch_sn1">
+                        <input id="ch_sn1" name="ch_sn1" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_1">
+                 
+                
+                <p>Вторник</p>
+                    <label for="ch_sn2">
+                        <input id="ch_sn2" name="ch_sn2" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_2">
+                
+                
+                <p>Среда</p>
+                    <label for="ch_sn3">
+                        <input id="ch_sn3" name="ch_sn3" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_3">
+                 
+                
+                <p>Четверг</p>
+                    <label for="ch_sn4">
+                        <input id="ch_sn4" name="ch_sn4" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_4">
+                
+                
+                <p>Пятница</p>
+                    <label for="ch_sn5">
+                        <input id="ch_sn5" name="ch_sn5" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_5">
+                 
+                
+                <p>Суббота</p>
+                    <label for="ch_sn6">
+                        <input id="ch_sn6" name="ch_sn6" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_6">
+                
+                
+                <p>Воскресенье</p>
+                    <label for="ch_sn7">
+                        <input id="ch_sn7" name="ch_sn7" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'sn' id="snack_7">
+                
             </div>   
         </details>
 
         <details class="dinner">
             <summary>Ужин</summary>
             <div class="content">
-                <p>Понедельник</p><input type="text" class = 'dn' id="dinner_1">
-                <p>Вторник</p><input type="text" class = 'dn' id="dinner_2">
-                <p>Среда</p><input type="text" class = 'dn' id="dinner_3">  
-                <p>Четверг</p><input type="text" class = 'dn' id="dinner_4">  
-                <p>Пятница</p><input type="text" class = 'dn' id="dinner_5">  
-                <p>Суббота</p><input type="text" class = 'dn' id="dinner_6">  
-                <p>Воскресенье</p><input type="text" class = 'dn' id="dinner_7">
+                <p>Понедельник</p>
+                    <label for="ch_dn1">
+                        <input id="ch_dn1" name="ch_dn1" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_1">
+                
+                
+                <p>Вторник</p>
+                    <label for="ch_dn2">
+                        <input id="ch_dn2" name="ch_dn2" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_2">
+                
+                
+                <p>Среда</p>
+                    <label for="ch_dn3">
+                        <input id="ch_dn3" name="ch_dn3" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_3">
+                 
+                
+                <p>Четверг</p>
+                    <label for="ch_dn4">
+                        <input id="ch_dn4" name="ch_dn4" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_4"> 
+                
+                <p>Пятница</p>
+                    <label for="ch_dn5">
+                        <input id="ch_dn5" name="ch_dn5" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_5">
+                 
+                
+                <p>Суббота</p>
+                    <label for="ch_dn6">
+                        <input id="ch_dn6" name="ch_dn6" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_6">
+                 
+                
+                <p>Воскресенье</p>
+                    <label for="ch_dn7">
+                        <input id="ch_dn7" name="ch_dn7" type="checkbox"/>
+                        Не заполнять последующие дни данным значением
+                    </label>
+                    <input type="text" class = 'dn' id="dinner_7">
+                
             </div>
         </details>
-    </section>  
+    </section> 
 
-    <button id="saveButton">Сохранить</button>
+    <div class="forbutton">
+        <button id="saveButton">Сохранить</button>
+    </div>
+    
 
     <script src="app.js"></script>
     

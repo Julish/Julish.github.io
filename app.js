@@ -19,30 +19,32 @@ function closeOpenedDetails() {
 }
 
 
-function fillingInputs(inputs){inputs.forEach(input => {
-		input.addEventListener('input', (event) =>{
-			const value = event.target.value;
-			const inputId = event.target.id[event.target.id.length-1]-1
-
-			for (let i = inputId; i < inputs.length; i++){
-				if (inputs[i] !== event.target) {
-					inputs[i].value = value;
-				}
-			}
-		})
-	})
-}
-
-
-document.addEventListener('DOMContentLoaded',(event) =>{
-	fillingInputs(document.querySelectorAll('.br'));
-	fillingInputs(document.querySelectorAll('.ln'));
-	fillingInputs(document.querySelectorAll('.sn'));
-	fillingInputs(document.querySelectorAll('.dn'));
-})
+function autofillInputs(inputs, checkbox) {
+            inputs.forEach((input, index) => {
+                input.addEventListener('blur', (event) => {
+                	const value = event.target.value;
+                    
+                    // Заполняем только нижние элементы
+                    for (let i = index + 1; i < 7; i++) {
+                    	if (inputs[i].value !== value && !checkbox[index].checked) {
+                        	inputs[i].value = value;
+                        	inputs[i].dataset.value = 'auto';
+                        }
+                    }
+                });
+            });
+        }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    autofillInputs(Array.from(document.querySelectorAll('.br')), Array.from(document.querySelectorAll('[id^="ch_br"]')));
+    autofillInputs(Array.from(document.querySelectorAll('.ln')), Array.from(document.querySelectorAll('[id^="ch_ln"]')));
+    autofillInputs(Array.from(document.querySelectorAll('.sn')), Array.from(document.querySelectorAll('[id^="ch_sn"]')));
+    autofillInputs(Array.from(document.querySelectorAll('.dn')), Array.from(document.querySelectorAll('[id^="ch_dn"]')));
+    
+});
 
+//передача данных телеге в формате json
 function readingIt(elements) {
 	return Array.from(elements, element =>element.value);
 };

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap')
-	
+
+
 * {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%; 
@@ -11,16 +12,15 @@
 
 
 body { 
-    flex-direction: column;
     padding: 20px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
-    margin: 0;
+    height: 100%;
+    /*! width: 100%; */
 }
 
-body::after {
+body::before {
     content: "";
-    /*display: block;*/
     position: fixed;
     top: 0;
     left: 0;
@@ -31,28 +31,35 @@ body::after {
     background-size: 60vw;
     opacity: 0.3;
     z-index: -1;
-    
 }
 
 div{
-    margin-top: 0;
-    margin-bottom: 10px;
-
-    background-size: cover;
+    display: block;
+    margin: 0;
+    
+}
+.header{
     background: var(--tg-theme-secondary-bg-color);
-
+    opacity: 0.7;
 }
 
 .instruction{
     text-align: center;
     font-size: small;
-    margin-top: 0;
     margin-bottom: 10px;
+    position: sticky;
 }
 
 #addition.instruction {
-    font-style: italic;
-    color: var(--tg-theme-hint-color);
+    width: -webkit-fill-available;
+    z-index:2;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: [start] 1fr [line1] 1fr [line2] auto [line3];;
 }
 
 details {
@@ -60,11 +67,13 @@ details {
     z-index:2;
     overflow: hidden;
     background-color: var(--tg-theme-secondary-bg-color);
+    opacity: 0.7;
 }
 
 details:hover {
     background: var(--tg-theme-header-bg-color);
     color: var(--tg-theme-accent-text-color);
+    opacity: 0.7;
 }
 
 details summary{
@@ -72,16 +81,20 @@ details summary{
     background-color: var(--tg-theme-secondary-bg-color);
 }
 
-
-
 details summary::before{
     margin-right: 5px;
-    transition: height 1.5s width 1s;
+    -webkit-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+-moz-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+-o-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
 }
 
 details[open] summary::before{
     margin-right: 5px;
-    transition: height 1.5s width 1s;
+    -webkit-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+    -moz-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+    -o-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+    transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
 }
 
 details div{
@@ -90,55 +103,54 @@ details div{
 }
 
 details > summary{
-    padding: 10px;
-    font-size: 20px;
-    transition: color 1s linear 1s;
-}
-
-details p{
     margin-top: 0;
     margin-left: 10px;
     margin-bottom: 5px;
     color: var(--tg-theme-text-color);
+    flex-grow: 1;
 }
 
-#saveButton{
-    margin: 0 auto;
-    display:  inline-block;
-    margin-right: inherit;
-    border: 1;
-    border-radius: 5px;
-    margin-top: 20px;
-		
-    height: 50px;
-    width: 150px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 500ms ease;
-    color: var(--tg-theme-button-text-color);
-    background: var(--tg-theme-button-color);
-
-}
-
-button:hover {
-    background: var(--tg-theme-secondary-bg-color);
-    color: var(--tg-theme-accent-text-color);
+details p{
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--tg-theme-text-color);
+    grid-column: start / line1;
 }
 
 
-input {
+
+input[type='checkbox'] {
+    height: 15px;
+}
+
+
+label[for^='ch'] {
+    font-size: x-small;
+    text-align: -webkit-auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-style: italic;
+    color: var(--tg-theme-hint-color);
+    grid-column: line1 / line2;
+}
+
+input[type='text'] {
     width: -webkit-fill-available;
-    width: 87%;
+    width: inherit;
     height: 30px;
     outline: none;
-    margin-left: 10px;
     margin-top: 0px;
     margin-bottom: 10px;
     padding: 10px 10px;
     font-size: 14px;
     border: 2px solid;
     border-radius: 5px;
+    grid-column: start / line3;
+}
+
+input:focus {
+    border-color: var(--tg-theme-accent-text-color);
 }
 
 .breakfast input {
@@ -156,8 +168,31 @@ input {
 .dinner input {
     border-color: #7D4E25;
 }
-input:focus {
-    border-color: var(--tg-theme-accent-text-color);
+
+
+.forbutton {
+    display: flex;
+    justify-content: center;
 }
 
-    
+#saveButton{
+    display:  inline-block;
+    margin-right: inherit;
+    border-radius: 5px;
+    margin-top: 20px;
+        
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: var(--tg-theme-button-text-color);
+    background: var(--tg-theme-button-color);
+
+}
+
+button:hover {
+    background: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-accent-text-color);
+}  
