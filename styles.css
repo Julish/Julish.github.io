@@ -12,11 +12,9 @@
 
 
 body { 
-    padding: 20px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
     height: 100%;
-    /*! width: 100%; */
 }
 
 body::before {
@@ -33,28 +31,56 @@ body::before {
     z-index: -1;
 }
 
-div{
-    display: block;
-    margin: 0;
-    
+
+.header, section{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 3vw;
+    padding-bottom: 2vw;
 }
-.header{
+
+.header::before{
+    position: absolute;
+    z-index: -1;
+    content: '';
+
     background: var(--tg-theme-secondary-bg-color);
-    opacity: 0.7;
+    opacity: 0.75;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
 }
 
 .instruction{
     text-align: center;
     font-size: small;
-    margin-bottom: 10px;
-    position: sticky;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
 }
 
 #addition.instruction {
     width: -webkit-fill-available;
     z-index:2;
     overflow: hidden;
-    margin-bottom: 10px;
+    font-size: x-small;
+    color: var(--tg-theme-hint-color);
+}
+
+
+section::before{
+    background-color: gray;
+    position: absolute;
+    z-index: -1;
+    content: '';
+
+    background: var(--tg-theme-secondary-bg-color);
+    opacity: 0.75;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
 }
 
 .content{
@@ -66,27 +92,30 @@ details {
     width: -webkit-fill-available;
     z-index:2;
     overflow: hidden;
-    background-color: var(--tg-theme-secondary-bg-color);
+    /*! background-color: var(--tg-theme-secondary-bg-color);*/
     opacity: 0.7;
 }
 
 details:hover {
-    background: var(--tg-theme-header-bg-color);
+    /*! background: var(--tg-theme-header-bg-color);*/
     color: var(--tg-theme-accent-text-color);
     opacity: 0.7;
 }
 
 details summary{
     border-radius: 5px;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color:  var(--tg-theme-header-bg-color); 
+    padding-left: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
 details summary::before{
     margin-right: 5px;
     -webkit-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
--moz-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
--o-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+    -moz-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+    -o-transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
+    transition: height 0.3s ease-out, opacity 0.3s ease 0.5s;
 }
 
 details[open] summary::before{
@@ -99,20 +128,21 @@ details[open] summary::before{
 
 details div{
     border: 1px solid #eee;
-    padding: 10px;
+    padding: 5px;
+    margin: 3vw;
 }
 
 details > summary{
-    margin-top: 0;
-    margin-left: 10px;
-    margin-bottom: 5px;
     color: var(--tg-theme-text-color);
     flex-grow: 1;
+    margin-top: 2vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 
 details p{
-    margin-top: 0;
-    margin-bottom: 5px;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
     color: var(--tg-theme-text-color);
     grid-column: start / line1;
 }
@@ -121,18 +151,24 @@ details p{
 
 input[type='checkbox'] {
     height: 15px;
+    display: inline;
+    vertical-align: middle;
 }
 
 
 label[for^='ch'] {
     font-size: x-small;
     text-align: -webkit-auto;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 5px;
     font-style: italic;
     color: var(--tg-theme-hint-color);
     grid-column: line1 / line2;
+    line-height: 0.9;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    margin: 1vw auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 input[type='text'] {
@@ -149,9 +185,6 @@ input[type='text'] {
     grid-column: start / line3;
 }
 
-input:focus {
-    border-color: var(--tg-theme-accent-text-color);
-}
 
 .breakfast input {
     border-color: #E4BA6A;
@@ -196,3 +229,7 @@ button:hover {
     background: var(--tg-theme-secondary-bg-color);
     color: var(--tg-theme-accent-text-color);
 }  
+
+input:focus {
+    border-color: var(--tg-theme-accent-text-color);
+}
