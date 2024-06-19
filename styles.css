@@ -233,6 +233,5 @@ button:hover {
 }  
 
 input:focus {
-    -webkit-border-color: var(--tg-theme-accent-text-color);
     border-color: var(--tg-theme-accent-text-color);
 }
