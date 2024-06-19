@@ -149,7 +149,9 @@ details p{
     grid-column: start / line1;
 }
 
-
+input{
+    cursor: auto;
+}
 
 input[type='checkbox'] {
     height: 15px;
